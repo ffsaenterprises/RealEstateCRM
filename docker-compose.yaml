@@ -30,7 +30,7 @@ services:
       - app-network
   client:
     build:
-      context: ./client
+      context: ./Client
       dockerfile: Dockerfile
     image: myapp-client
     container_name: myapp-react-client
