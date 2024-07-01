@@ -9,8 +9,8 @@ services:
     container_name: myapp-node-server
     command: npm start
     volumes:
-      - ./server/:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./server/:/usr/app/server
+      - /usr/app/server/node_modules
     ports:
       - "5000:5000"
     depends_on:
@@ -36,8 +36,8 @@ services:
     container_name: myapp-react-client
     command: npm start
     volumes:
-      - ./client/:/usr/app
-      - /usr/app/node_modules
+      - ./client/:/usr/app/client
+      - /usr/app/client/node_modules
     depends_on:
       - server
     ports:
