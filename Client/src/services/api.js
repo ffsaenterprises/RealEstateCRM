@@ -4,7 +4,7 @@ import { constant } from "constant"
 
 export const postApi = async (path, data, login) => {
     try {
-        let result = await axios.post(constant.baseUrl + path, data, {
+        let result = await axios.post(constant.baseUrl/path, data, {
             headers: {
                 Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
             }
@@ -25,7 +25,7 @@ export const postApi = async (path, data, login) => {
 }
 export const putApi = async (path, data, id) => {
     try {
-        let result = await axios.put(constant.baseUrl + path, data, {
+        let result = await axios.put(constant.baseUrl/path, data, {
             headers: {
                 Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
             }
@@ -39,7 +39,7 @@ export const putApi = async (path, data, id) => {
 
 export const deleteApi = async (path, id) => {
     try {
-        let result = await axios.delete(constant.baseUrl + path + id, {
+        let result = await axios.delete(constant.baseUrl/path + id, {
             headers: {
                 Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
             }
@@ -56,7 +56,7 @@ export const deleteApi = async (path, id) => {
 
 export const deleteManyApi = async (path, data) => {
     try {
-        let result = await axios.post(constant.baseUrl + path, data, {
+        let result = await axios.post(constant.baseUrl/path, data, {
             headers: {
                 Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
             }
@@ -74,7 +74,7 @@ export const deleteManyApi = async (path, data) => {
 export const getApi = async (path, id) => {
     try {
         if (id) {
-            let result = await axios.get(constant.baseUrl + path + id, {
+            let result = await axios.get(constant.baseUrl/path + id, {
                 headers: {
                     Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
                 }
@@ -82,7 +82,7 @@ export const getApi = async (path, id) => {
             return result
         }
         else {
-            let result = await axios.get(constant.baseUrl + path, {
+            let result = await axios.get(constant.baseUrl/path, {
                 headers: {
                     Authorization: localStorage.getItem("token") || sessionStorage.getItem("token")
                 }
