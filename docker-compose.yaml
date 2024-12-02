@@ -10,7 +10,7 @@ services:
       - mongo-data:/data/db
 
   backend:
-    build: ./backend
+    build: ./server
     container_name: backend-container
     ports:
       - "5000:5000"
@@ -20,7 +20,7 @@ services:
       - mongo
 
   frontend:
-    build: ./frontend
+    build: ./Client
     container_name: frontend-container
     ports:
       - "3000:3000"
